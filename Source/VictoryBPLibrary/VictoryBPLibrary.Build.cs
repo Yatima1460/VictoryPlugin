@@ -10,31 +10,25 @@ public class VictoryBPLibrary : ModuleRules
 		bEnforceIWYU = false;
 		
 		PublicIncludePaths.AddRange(
-			new string[] {
-				"VictoryBPLibrary/Public"
-				
-				// ... add public include paths required here ...
-			}
-			);
+			new string[] { "VictoryBPLibrary/Public"}
+		);
 				
 		
 		PrivateIncludePaths.AddRange(
-			new string[] {
-				"VictoryBPLibrary/Private",
+			new string[] {"VictoryBPLibrary/Private",
 				
 				// ... add other private include paths required here ...
 			}
-			);
+		);
 			
 		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
 				"Core",
-				
 				// ... add other public dependencies that you statically link with here ...
 			}
-			);
+		);
 			
 		
 		PrivateDependencyModuleNames.AddRange(
@@ -51,32 +45,34 @@ public class VictoryBPLibrary : ModuleRules
 				"UMG", "Slate", "SlateCore",
 				
 				"ImageWrapper",
-				
+				"Apex",
+				"ApexDestruction",
 				"PhysX", 
 				
 				"HeadMountedDisplay",
   
-                "AIModule"	
+                "AIModule",
 			}
-			);
+		);
 		
 		//APEX EXCLUSIONS
 		if (Target.Platform != UnrealTargetPlatform.Android && Target.Platform != UnrealTargetPlatform.HTML5 && Target.Platform != UnrealTargetPlatform.IOS)
 		{
 			PrivateDependencyModuleNames.AddRange(
-			new string[]
-			{
-				"APEX"
-			}
+				new string[]
+				{
+					//"APEX",
+					
+				}
 			);
 		}
 	
 		 
 		DynamicallyLoadedModuleNames.AddRange(
-			new string[]
-			{
-				// ... add any modules that your module loads dynamically here ...
-			}
-			);
+				new string[]
+				{
+					// ... add any modules that your module loads dynamically here ...
+				}
+		);
 	}
 }

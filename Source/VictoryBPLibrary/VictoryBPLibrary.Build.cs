@@ -45,13 +45,13 @@ public class VictoryBPLibrary : ModuleRules
 				"UMG", "Slate", "SlateCore",
 				
 				"ImageWrapper",
-				"Apex",
-				"ApexDestruction",
+
 				"PhysX", 
 				
 				"HeadMountedDisplay",
   
                 "AIModule",
+
 			}
 		);
 		
@@ -61,8 +61,8 @@ public class VictoryBPLibrary : ModuleRules
 			PrivateDependencyModuleNames.AddRange(
 				new string[]
 				{
-					//"APEX",
-					
+					"APEX",
+					"ApexDestruction",
 				}
 			);
 		}

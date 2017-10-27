@@ -5,6 +5,7 @@
 */
 #pragma once
 
+#include "HAL/PlatformApplicationMisc.h"
 //to prevent nodes from getting called in constructors:
 //meta=(UnsafeDuringActorConstruction = "true")
 	 

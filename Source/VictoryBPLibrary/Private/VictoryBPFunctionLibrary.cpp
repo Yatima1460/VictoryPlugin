@@ -10,7 +10,7 @@
 //FGPUDriverInfo GPU 
 #include "Runtime/Core/Public/GenericPlatform/GenericPlatformDriver.h"
 
-#include "GenericPlatformApplicationMisc.h"
+
  
 //MD5 Hash
 #include "Runtime/Core/Public/Misc/SecureHash.h"
@@ -66,6 +66,9 @@
 #include "Runtime/Engine/Private/PhysicsEngine/PhysXSupport.h"
 //~~~~~~~~~~~
  
+
+
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //									Saxon Rah Random Nodes
 // Chrono and Random
@@ -2458,15 +2461,11 @@ bool UVictoryBPFunctionLibrary::IsAlphaNumeric(const FString& String)
 
 void UVictoryBPFunctionLibrary::Victory_GetStringFromOSClipboard(FString& FromClipboard)
 {  
-	#ifndef UE_EDITOR
-	FGenericPlatformApplicationMisc::ClipboardPaste(FromClipboard);
-	#endif
+	FPlatformApplicationMisc::ClipboardPaste(FromClipboard);
 } 
 void UVictoryBPFunctionLibrary::Victory_SaveStringToOSClipboard(const FString& ToClipboard)
 {
-	#ifndef UE_EDITOR
-	FGenericPlatformApplicationMisc::ClipboardCopy(*ToClipboard);
-	#endif
+	FPlatformApplicationMisc::ClipboardCopy(*ToClipboard);
 }
 	
 
@@ -2927,11 +2926,8 @@ void UVictoryBPFunctionLibrary::Rendering__UnFreezeGameRendering()
 	
 bool UVictoryBPFunctionLibrary::ClientWindow__GameWindowIsForeGroundInOS()
 {   
-	#ifndef UE_EDITOR
-		return FGenericPlatformApplicationMisc::IsThisApplicationForeground(); //TODO: update to new API
-	#else
-		return false;
-	#endif
+	//return false;
+	return FPlatformApplicationMisc::IsThisApplicationForeground();
 		/*
 	//Iterate Over Actors
 	UWorld* TheWorld = NULL;

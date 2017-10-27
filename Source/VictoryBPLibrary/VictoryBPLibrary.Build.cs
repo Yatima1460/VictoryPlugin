@@ -37,6 +37,7 @@ public class VictoryBPLibrary : ModuleRules
 				"CoreUObject", 
 				"Engine", 
 				"InputCore",
+				"ApplicationCore",
 				
 				"RHI",
 				"RenderCore",

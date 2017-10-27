@@ -69,7 +69,8 @@ enum class EVictoryHMDDevice : uint8
 	Morpheus				UMETA(DisplayName="Morpheus"),
 	ES2GenericStereoMesh	UMETA(DisplayName="ES2 Generic Stereo Mesh"),
 	SteamVR					UMETA(DisplayName="Vive (Steam VR)"),
-	GearVR					UMETA(DisplayName="Gear VR")
+	GearVR					UMETA(DisplayName="Gear VR"),
+	GoogleVR				UMETA(DisplayName="Google VR")
 };
 
 USTRUCT(BlueprintType)

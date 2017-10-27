@@ -36,8 +36,8 @@
 
 //~~~ Image Wrapper ~~~
 #include "ImageUtils.h"
-#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapper.h"
-#include "Runtime/ImageWrapper/Public/Interfaces/IImageWrapperModule.h"
+#include "Runtime/ImageWrapper/Public/IImageWrapper.h"
+#include "Runtime/ImageWrapper/Public/IImageWrapperModule.h"
 //~~~ Image Wrapper ~~~
 
 //Body Setup
@@ -45,7 +45,7 @@
 
 
 //Apex issues, can add iOS here  <3 Rama
-#if PLATFORM_ANDROID || PLATFORM_HTML5_BROWSER || PLATFORM_IOS
+#if PLATFORM_ANDROID || PLATFORM_HTML5 || PLATFORM_IOS
 #ifdef WITH_APEX
 #undef WITH_APEX
 #endif
@@ -556,7 +556,7 @@ bool UVictoryBPFunctionLibrary::VictoryPhysics_UpdateAngularDamping(UPrimitiveCo
 	return true;
 }
 	 
-bool UVictoryBPFunctionLibrary::VictoryDestructible_DestroyChunk(UDestructibleComponent* DestructibleComp, int32 HitItem)
+bool UVictoryBPFunctionLibrary::VictoryDestructible_DestroyChunk(DestructibleComponent* DestructibleComp, int32 HitItem)
 {   
 	#if WITH_APEX
 	if(!DestructibleComp) 

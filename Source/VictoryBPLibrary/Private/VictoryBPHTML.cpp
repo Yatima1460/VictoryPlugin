@@ -4,7 +4,7 @@
 #include "VictoryBPLibraryPrivatePCH.h"
 #include "VictoryBPHTML.h"
 
-#if PLATFORM_HTML5_BROWSER
+#if PLATFORM_HTML5
 	#include "SDL_opengl.h"
 
 	DEFINE_LOG_CATEGORY_STATIC(VictoryPluginHTML, Log, All);
@@ -15,7 +15,7 @@
 
 bool UVictoryBPHTML::IsHTML()
 { 
-	#if PLATFORM_HTML5_BROWSER
+	#if PLATFORM_HTML5
 	return true;
 	#else
 	return false;
@@ -26,7 +26,7 @@ void UVictoryBPHTML::VictoryHTML5_SetCursorVisible(bool MakeVisible)
 { 
 	if(MakeVisible)
 	{
-		#if PLATFORM_HTML5_WIN32
+		#if PLATFORM_HTML5
 		{
 			SDL_SetRelativeMouseMode(SDL_FALSE);
 			SDL_ShowCursor(SDL_ENABLE);
@@ -35,7 +35,7 @@ void UVictoryBPHTML::VictoryHTML5_SetCursorVisible(bool MakeVisible)
 		}
 		#endif
 		 
-		#if PLATFORM_HTML5_BROWSER
+		#if PLATFORM_HTML5
 		{
 			emscripten_exit_pointerlock(); 
 			UE_LOG(VictoryPluginHTML, Warning, TEXT("Exiting Pointer Lock"));
@@ -44,7 +44,7 @@ void UVictoryBPHTML::VictoryHTML5_SetCursorVisible(bool MakeVisible)
 	}
 	else 
 	{
-		#if PLATFORM_HTML5_WIN32
+		#if PLATFORM_HTML5
 		{
 			SDL_SetWindowGrab(WindowHandle, SDL_TRUE);
 			SDL_ShowCursor(SDL_DISABLE);
@@ -53,7 +53,7 @@ void UVictoryBPHTML::VictoryHTML5_SetCursorVisible(bool MakeVisible)
 		} 
 		#endif
 		 
-		#if PLATFORM_HTML5_BROWSER
+		#if PLATFORM_HTML5
 		{
 			emscripten_request_pointerlock ( "#canvas" , true);
 			UE_LOG(VictoryPluginHTML, Warning, TEXT("Entering Pointer Lock"));
